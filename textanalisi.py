@@ -9,12 +9,11 @@ LETTERS_AND_WHITESPACE = UPPERLETTERS + UPPERLETTERS.lower() + ' \t\n'
 #in futuro mi sa che dovrò fare una classe "lingua"
 
 def openDict():
-	fileDict = open('dictionary.txt')
-	words = {}
-	for word in fileDict.read().split('\n'):
-		words[word] = None  #tutti dicono di usare questa strana tecnica
-	fileDict.close()
-	return words
+	with open('dictionary.txt') as fileDict:
+		words = {}
+		for word in fileDict.read().split('\n'):
+			words[word] = None  #tutti dicono di usare questa strana tecnica
+		return words
 
 WORDS = openDict()
 
