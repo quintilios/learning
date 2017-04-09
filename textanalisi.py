@@ -1,4 +1,4 @@
-
+import collections
 #provo a mettere qui un mucchio di funzioni
 #prima cosa le variabili maiuscole, tranne WORDS che metterò sotto
 
@@ -54,13 +54,10 @@ def isLanguage(message, wordPercent = 35, letterPercent = 85):
 #ok questo l'ho fatto nel corso di coursera, consigliava di usare un dizionario. Mi sa che consigliava anche di settare un qualche valore a zero, da rivedere.
 
 def LetterTree(message):
-	letterTree = dict()
+	letterTree = collections.Counter()
 	for symbol in message:
-		if symbol.upper() not in letterTree:
-			letterTree[symbol.upper()] = 1
-		else:
 			letterTree[symbol.upper()] += 1
-	return letterTree
+	return letterTreee
 
 # ovvediamo se si puo' paragonare due dizionari e se funziona come dico io. TUTTO MAIUSCOLO.
 # pare funzionare ma forse c'è qualche errore
